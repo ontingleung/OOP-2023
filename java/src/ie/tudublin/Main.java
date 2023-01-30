@@ -21,6 +21,8 @@ public class Main
 		while (ginger.numLives > 0) {
 			ginger.kill();
 		}
+
+		helloProcessing();
 	}
 	
 }
