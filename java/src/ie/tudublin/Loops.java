@@ -10,6 +10,7 @@ public class Loops extends PApplet {
 	}
 
 	public void setup() {
+		background(255, 0, 0);
 	}
 
 
@@ -21,10 +22,15 @@ public class Loops extends PApplet {
 	}
 
 	public void draw() {
-		background(0);
+		background(255);
 		fill(255);
 		
-		
+		for(int i = 10; i < 10; i++) {
+			for(int j = 10; j < 10; j++) {
+				colorMode(HSB);
+				circle((10*i), (10*j), 100);
+			}
+		}
 		
 
 	}

@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import jogamp.graph.curve.tess.Loop;
+
 public class Main
 {
 
@@ -29,7 +31,7 @@ public class Main
 		penny.setName("Penny");
 		penny.speak();
 
-		bugZap();
+		loops();
 	}
 	
 }
