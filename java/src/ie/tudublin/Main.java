@@ -20,6 +20,12 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new BugZap());
     }
+
+	public static void starMap()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new StarMap());
+    }
 	
 	public static void main(String[] args)
 	{
@@ -29,7 +35,11 @@ public class Main
 		penny.setName("Penny");
 		penny.speak();
 
+<<<<<<< HEAD
 		bugZap();
+=======
+		starMap();
+>>>>>>> 45c2a18a801f6c0cfa6482c3f9e641adf08ca969
 	}
 	
 }
