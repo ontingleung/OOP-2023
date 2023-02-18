@@ -5,6 +5,12 @@ import processing.data.TableRow;
 
 public class Star {
     private boolean hab;
+    private String displayName;
+    private float xG;
+    private float yG;
+    private float zG;
+    private float absMag;
+    private float distance;
 
     public Star(boolean hab, String displayName, float xG, float yG, float zG, float absMag, float distance) {
         this.hab = hab;
@@ -16,21 +22,7 @@ public class Star {
         this.distance = distance;
     }
 
-    public Star(TableRow row)
-    {
-        // Constructor chaining
-        this(row.getInt("Hab?") == 1,
-        row.getString("Display Name"),
-        row.getFloat("Xg"),
-        row.getFloat("Yg"),
-        row.getFloat("Zg"),
-        row.getFloat("AbsMag"),
-        row.getFloat("Distance")
-        );            
-    }
-
-    public void render(PApplet p)
-    {
+    public void render(PApplet p) {
         float border = p.width * 0.1f;
         float x = PApplet.map(xG, -5, 5, border, p.width - border);
         float y = PApplet.map(yG, -5, 5, border, p.height - border);
@@ -44,18 +36,25 @@ public class Star {
         p.textAlign(PApplet.LEFT, PApplet.CENTER);
         p.textSize(12);
         p.text(displayName, x + 20, y);
-        p.noFill();    
-        
+        p.noFill();  
+
     }
 
-    private String displayName;
-    private float xG;
-    private float yG;
-    private float zG;
-    private float absMag;
-    private float distance;
+    public Star(TableRow row) {
 
-    
+        // Constructor Chaining
+        this(row.getInt("Hab?") == 1,
+            row.getString("Display Name"),
+            row.getFloat("Xg"),
+            row.getFloat("Yg"),
+            row.getFloat("Zg"),
+            row.getFloat("AbsMag"),
+            row.getFloat("Distance")
+        );
+
+    }
+
+
     public boolean isHab() {
         return hab;
     }
@@ -77,6 +76,8 @@ public class Star {
     public float getDistance() {
         return distance;
     }
+
+    
     public void setHab(boolean hab) {
         this.hab = hab;
     }
@@ -105,6 +106,7 @@ public class Star {
         return "Star [hab=" + hab + ", displayName=" + displayName + ", xG=" + xG + ", yG=" + yG + ", zG=" + zG
                 + ", absMag=" + absMag + ", distance=" + distance + "]";
     }
+
     
-    
+     
 }

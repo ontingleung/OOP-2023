@@ -3,6 +3,8 @@ package ie.tudublin;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class StarMap extends PApplet
 {
@@ -18,28 +20,47 @@ public class StarMap extends PApplet
 		background(0);
 		stroke(221,160,221);
 		smooth();
+		
+		loadStars();
+		printStars();
+		displayStars();
 
 	}
 
-	public void loadData() {
+	void printStars() {
+		for(int i = 0; i < stars.size(); i++){
+			println(stars.get(i));
+		}
+	}
 
+	void displayStars() {
+		for(int i = 0; i < stars.size(); i++){
+			stars.get(i).render(this);
+		}
+	}
+
+	public void loadStars() {
+		Table table = loadTable("HabHYG15ly.csv", "header");
+		for (TableRow row: table.rows()) {
+			Star s = new Star(row);
+			stars.add(s);
+			
+		}
 	}
 
 	public void drawGrid() {
+		stroke(0, 255, 255);
 		float border = width * 0.1f;
-		float lines = 10.0f;
-		float gap = (width - (border*2.0f)) / lines; 
 
-
-		for(int i = -5; i <= 5; i++) {
-			float x = border + (gap * (i+5));
-			float y = border;
-			line(x, y, x, height - border);
-			line(y, x, width - border, x);
+		for(int i = -5 ; i <= 5 ; i ++)
+		{
+			float x = map(i, -5, 5, border, width - border);
+			line(x, border, x, height - border);
+			line(border, x, width - border, x);
 
 			textAlign(CENTER, CENTER);
-			text(i, x, gap * 0.5f);
-			text(i, gap * 0.5f, x);
+			text(i, x, border * 0.5f);
+			text(i, border * 0.5f, x);
 		}
 	}
 
