@@ -14,6 +14,7 @@ public class Star
     private float absMag;
 
     
+    
 
     @Override
     public String toString() {
