@@ -133,6 +133,17 @@ public class Audio1 extends PApplet
             float ellipseWidth = lerpedAvrg * width * 2;
             ellipse(width / 2, halfH, ellipseWidth, ellipseWidth);
             break;
+        case 4:
+                background(0);
+
+                lerpedAvrg = lerp(lerpedAvrg, average, 0.1f);
+                noFill();
+                strokeWeight(2);
+                stroke(map(lerpedAvrg, 0, 1, 0, 255), 255, 255);
+                float squareWidth = lerpedAvrg * width * 2;
+                rectMode(CENTER);
+                rect(width / 2, halfH, squareWidth, squareWidth);
+            break;
         }
         
 
