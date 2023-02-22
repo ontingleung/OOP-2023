@@ -11,7 +11,7 @@ public class Audio1 extends PApplet
 	
 	Minim minim; 
 	AudioInput ai; //microphone
-	AudioPlayer ap;
+	AudioPlayer ap; //the player
 	AudioBuffer ab;
 	
 	public void settings()
