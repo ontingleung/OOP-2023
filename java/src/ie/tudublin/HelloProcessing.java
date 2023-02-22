@@ -12,6 +12,7 @@ public class HelloProcessing extends PApplet
 
 	public void setup() {
 		background(255,0,0);
+		
 	}
 
 	public void draw()
