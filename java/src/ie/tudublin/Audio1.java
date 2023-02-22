@@ -18,6 +18,7 @@ public class Audio1 extends PApplet
     float y = 0;
     float smoothedY = 0;
     float smoothedAmplitude = 0;
+    float lerpedAvrg = 0;
 
     public void keyPressed() {
 		if (key >= '0' && key <= '9') {
@@ -102,18 +103,36 @@ public class Audio1 extends PApplet
             }            
             break;
         case 2:
-				background(0);
-				for (int i = 0; i < ab.size(); i++) 
+            background(0);
+            for (int i = 0; i < ab.size(); i++) 
                 {
-					float c = map(i, 0, ab.size(), 0, 255);
-					stroke(c, 255, 255);
-					float f = ab.get(i) * halfH;
-					line(0, height, halfH - f, i);
-                    line(0, halfH + f, halfH - f, i);
-                    line(0, halfH + f, halfH - f, i);
-                    line(0, halfH + f, halfH - f, i);
-				}
-			break;
+                    float sample = ab.get(i) * halfH;
+                    stroke(map(i, 0, ab.size(), 0, 255), 255, 255);
+
+                    sample = ab.get(i) * width * 2;
+                    stroke(map(i, 0, ab.size(), 0, 255), 255, 255);
+                    line(0, i, sample, i);
+                    line(width, i, width - sample, i);
+                    line(i, 0, i, sample);
+                    line(i, height, i, height - sample);
+                }
+            break;
+        case 3:
+            background(0);
+
+            average = sum / ab.size();
+
+            // Smoothly interpolate between the previous average and the new average
+            lerpedAvrg = lerp(lerpedAvrg, average, 0.1f);
+
+            // Draw an ellipse with a size based on the lerped average
+            noFill();
+
+            strokeWeight(2);
+            stroke(map(lerpedAvrg, 0, 1, 0, 255), 255, 255);
+            float ellipseWidth = lerpedAvrg * width * 2;
+            ellipse(width / 2, halfH, ellipseWidth, ellipseWidth);
+            break;
         }
         
 
