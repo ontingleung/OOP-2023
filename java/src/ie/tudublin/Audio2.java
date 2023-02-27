@@ -6,7 +6,7 @@ import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
 
-public class Audio1 extends PApplet
+public class Audio2 extends PApplet
 {
     Minim m;
     AudioPlayer ap;
@@ -16,7 +16,7 @@ public class Audio1 extends PApplet
 
     public void settings()
     {
-        size(1024, 1024);
+        size(1024, 1024, PSD);
     }
 
     public void setup()
@@ -33,7 +33,7 @@ public class Audio1 extends PApplet
         float half = height / 2;
         for (int i = 0; i < ab.size(); i++) 
         {
-            line(i, half, 1, half + ab.get(i) * half);
+            line(i, half, i, half + ab.get(i) * half);
         }
     }        
 }
