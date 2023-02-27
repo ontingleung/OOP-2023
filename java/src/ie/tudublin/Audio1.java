@@ -143,7 +143,7 @@ public class Audio1 extends PApplet
                 float squareWidth = lerpedAvrg * width * 2;
                 rectMode(CENTER);
                 rect(width / 2, halfH, squareWidth, squareWidth);
-            break;
+        break;
         }
         
 
