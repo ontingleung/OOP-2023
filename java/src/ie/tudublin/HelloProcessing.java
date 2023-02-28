@@ -62,8 +62,9 @@ public class HelloProcessing extends PApplet
 		}
 		if (y2 < 0 || y2 > height)
 		{
-			y2dir = - y2dir;
 			
+			y2dir = - y2dir;
+
 		}
 	}
 }
