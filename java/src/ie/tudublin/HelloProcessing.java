@@ -42,9 +42,11 @@ public class HelloProcessing extends PApplet
 		line(x1, y1, x2, y2);
 
 		x1 += x1dir;
+
 		x2 += x2dir;
-		y1 += y1dir;
 		
+		y1 += y1dir;
+
 		y2 += y2dir;
 		 
 
