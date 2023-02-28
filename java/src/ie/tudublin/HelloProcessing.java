@@ -34,6 +34,7 @@ public class HelloProcessing extends PApplet
 	float x1dir, x2dir, y1dir, y2dir;
 	float c = 0;
 	
+	
 	public void draw()
 	{	
 		strokeWeight(2);
