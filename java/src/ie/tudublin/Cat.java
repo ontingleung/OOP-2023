@@ -16,6 +16,7 @@ public class Cat {
             System.out.println("Ouch!");
         }
         else {
+            
             System.out.println("Dead");
         }
 	}
