@@ -52,8 +52,9 @@ public class HelloProcessing extends PApplet
 		
 		if (x1 < 0 || x1 > width)
 		{
-			
+
 			x1dir = - x1dir;
+			
 		}
 		if (y1 < 0 || y1 > height)
 		{
