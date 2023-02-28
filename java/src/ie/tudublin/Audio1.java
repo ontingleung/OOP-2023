@@ -8,7 +8,7 @@ import processing.core.PApplet;
 
 public class Audio1 extends PApplet
 {
-    Minim m;
+    Minim minim;
     AudioPlayer ap;
     AudioInput ai;
     AudioBuffer ab;
@@ -21,8 +21,8 @@ public class Audio1 extends PApplet
 
     public void setup()
     {
-        m = new Minim(this);  
-        ai = m.getLineIn(Minim.MONO, width, 44100, 16);
+        minim = new Minim(this);  
+        ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
         ab = ai.mix;
     }
 

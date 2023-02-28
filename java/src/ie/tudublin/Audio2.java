@@ -6,23 +6,26 @@ import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
 
+float lerpedBuffer;
+
 public class Audio2 extends PApplet
 {
-    Minim m;
+    Minim minim;
     AudioPlayer ap;
     AudioInput ai;
     AudioBuffer ab;
+    lerpedBuffer = new float(width);
 
 
     public void settings()
     {
-        size(1024, 1024, PSD);
+        size(1024, 1024);
     }
 
     public void setup()
     {
-        m = new Minim(this);  
-        ai = m.getLineIn(Minim.MONO, width, 44100, 16);
+        minim = new Minim(this);  
+        ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
         ab = ai.mix;
     }
 
@@ -33,10 +36,10 @@ public class Audio2 extends PApplet
         float half = height / 2;
         for (int i = 0; i < ab.size(); i++) 
         {
+            stroke(map(i, 0, ab.size(), 0, 255), 255, 255);
+            //lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.05f);
             line(i, half, i, half + ab.get(i) * half);
         }
     }        
-    static public final float map(float value, float istart, float istop, float ostart, float ostop) {
-        return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
-  }
+    
 }
