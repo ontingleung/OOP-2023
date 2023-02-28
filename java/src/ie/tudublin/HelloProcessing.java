@@ -11,7 +11,9 @@ public class HelloProcessing extends PApplet
 	}
 
 	public void setup() {
+		
 		colorMode(HSB);
+
 		background(0);
 
 		x1 = random(0, width);
@@ -21,7 +23,7 @@ public class HelloProcessing extends PApplet
 		y1 = random(0, height);
 
 		y2 = random(0, height);
-		
+
 
 		float range = 5;
 
