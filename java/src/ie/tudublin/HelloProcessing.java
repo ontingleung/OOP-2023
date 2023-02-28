@@ -40,11 +40,12 @@ public class HelloProcessing extends PApplet
 		stroke(c, 255, 255);
 		c = (c + 1f) % 255;
 		line(x1, y1, x2, y2);
+		
 
 		x1 += x1dir;
 
 		x2 += x2dir;
-		
+
 		y1 += y1dir;
 
 		y2 += y2dir;
