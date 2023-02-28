@@ -22,8 +22,11 @@ public class HelloProcessing extends PApplet
 		float range = 5;
 
 		x1dir = random(-range, range);
+		
 		x2dir = random(-range, range);
+
 		y1dir = random(-range, range);
+
 		y2dir = random(-range, range);
 
 		smooth();
@@ -33,7 +36,7 @@ public class HelloProcessing extends PApplet
 	float x1, y1, x2, y2;
 	float x1dir, x2dir, y1dir, y2dir;
 	float c = 0;
-	
+
 	
 	public void draw()
 	{	
