@@ -15,14 +15,18 @@ public class HelloProcessing extends PApplet
 		background(0);
 
 		x1 = random(0, width);
+
 		x2 = random(0, width);
+
 		y1 = random(0, height);
+
 		y2 = random(0, height);
+		
 
 		float range = 5;
 
 		x1dir = random(-range, range);
-		
+
 		x2dir = random(-range, range);
 
 		y1dir = random(-range, range);
