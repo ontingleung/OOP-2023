@@ -11,7 +11,8 @@ import ddf.minim.analysis.FFT;
 import processing.core.PApplet;
 
 public class Audio3 extends PApplet{
-
+ 
+    
     Minim m;
     AudioInput ai;
     AudioPlayer ap;
