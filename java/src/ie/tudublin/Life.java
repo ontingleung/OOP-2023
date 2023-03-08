@@ -18,27 +18,12 @@ public class Life extends PApplet
 		board.randomise();
 	}
 
+	boolean paused = false;
 	public void keyPressed() {
-		switch (key) {
-			case 1:
-
-				
-				break;
-			
-			case 2:
-
-				
-				break;
-			
-			case 3:
-
-				
-				break;
-		
-			default:
-			
-				break;
-		}
+		if (keyCode == ' ')
+        {
+            paused = ! paused;
+        }
 
 	}
 

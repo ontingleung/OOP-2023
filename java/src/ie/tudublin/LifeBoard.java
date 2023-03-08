@@ -145,7 +145,7 @@ public class LifeBoard {
         }
 
         for (int row = 0; row < size; row++) {
-            board[row][size / 2] = ;
+            board[row][size / 2] = true;
         }
     }
     
