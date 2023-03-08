@@ -117,7 +117,7 @@ public class LifeBoard {
 
                 if (board[row][col])
                 {
-                    p.fill(0, 255, 0);
+                    p.fill(0, 0, 200);
                 }
                 else
                 {
@@ -136,5 +136,17 @@ public class LifeBoard {
     public void setSize(int size) {
         this.size = size;
     } 
+
+    public void crossSpawn() {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < board.length; col++) {
+                board[row][col] = false;
+            }
+        }
+
+        for (int row = 0; row < size; row++) {
+            board[row][size / 2] = ;
+        }
+    }
     
 }
