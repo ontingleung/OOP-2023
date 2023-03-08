@@ -78,8 +78,8 @@ public class LifeBoard {
                 // dead with 3 neighboiurs comes to life
             }
         }
-        // boolean[][] temp;
-        // temp = board;
+        boolean[][] temp;
+        temp = board;
         board = next;
         next = temp;
     }
